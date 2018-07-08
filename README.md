@@ -1,12 +1,8 @@
-# shell-escape-tag
+# @tehshrike/shell-escape-tag
 
-[![Build Status](https://secure.travis-ci.org/chocolateboy/shell-escape-tag.svg)](https://travis-ci.org/chocolateboy/shell-escape-tag)
-[![NPM Version](https://img.shields.io/npm/v/shell-escape-tag.svg)](https://www.npmjs.org/package/shell-escape-tag)
+Like [shell-escape-tag](https://github.com/chocolateboy/shell-escape-tag) but with a small install size
 
 An ES6 template tag which escapes parameters for interpolation into shell commands
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [INSTALL](#install)
 - [SYNOPSIS](#synopsis)
@@ -20,11 +16,7 @@ An ES6 template tag which escapes parameters for interpolation into shell comman
   - [NPM Scripts](#npm-scripts)
   - [Gulp Tasks](#gulp-tasks)
 - [SEE ALSO](#see-also)
-- [VERSION](#version)
-- [AUTHOR](#author)
 - [COPYRIGHT AND LICENSE](#copyright-and-license)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # INSTALL
 
@@ -142,14 +134,6 @@ The following Gulp tasks are available:
 * [any-shell-escape](https://www.npmjs.com/package/any-shell-escape) - Escape and stringify an array of arguments to be executed on the shell
 * [execa](https://www.npmjs.com/package/execa) - A better `child_process`
 * [shell-tag](https://www.npmjs.com/package/shell-tag) - Run shell commands inline in JavaScript with ES6 template strings
-
-# VERSION
-
-1.2.1
-
-# AUTHOR
-
-[chocolateboy](mailto:chocolate@cpan.org)
 
 # COPYRIGHT AND LICENSE
 
