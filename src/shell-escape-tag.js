@@ -1,6 +1,6 @@
-import shellEscape from 'any-shell-escape'
-import INSPECT     from 'inspect-custom-symbol'
-import _           from 'lodash'
+const shellEscape = require(`any-shell-escape`)
+const INSPECT = require(`inspect-custom-symbol`)
+const _ = require(`lodash`)
 
 /*
  * wrapper class for already escaped/preserved values.
@@ -8,18 +8,18 @@ import _           from 'lodash'
  * from instances of this class rather than escaping them again
  */
 class Escaped {
-    constructor (value) {
-        this.value = value
-    }
+	constructor(value) {
+		this.value = value
+	}
 
-    toString () {
-        return this.value
-    }
+	toString() {
+		return this.value
+	}
 
-    // for console.log etc.
-    [INSPECT] () {
-        return this.value
-    }
+	// for console.log etc.
+	[INSPECT]() {
+		return this.value
+	}
 }
 
 /*
@@ -32,10 +32,10 @@ class Escaped {
  *
  * then flattens the resulting array and returns its elements joined by a space
  */
-function _shellEscape (params, options = {}) {
-    let escaped = [ __shellEscape(params, options) ]
-    let flattened = _.flattenDeep(escaped)
-    return flattened.join(' ')
+function _shellEscape(params, options = {}) {
+	const escaped = [ __shellEscape(params, options) ]
+	const flattened = _.flattenDeep(escaped)
+	return flattened.join(` `)
 }
 
 /*
@@ -43,45 +43,45 @@ function _shellEscape (params, options = {}) {
  * or a possibly-empty array of arrays/leaf nodes. prunes
  * null and undefined by returning empty arrays
  */
-function __shellEscape (params, options) {
-    if (params instanceof Escaped) {
-        return params.value
-    } else if (Array.isArray(params)) {
-        return params.map(param => __shellEscape(param, options))
-    } else if (params == null) {
-        return []
-    } else {
-        return options.verbatim ? String(params) : shellEscape(String(params))
-    }
+function __shellEscape(params, options) {
+	if (params instanceof Escaped) {
+		return params.value
+	} else if (Array.isArray(params)) {
+		return params.map(param => __shellEscape(param, options))
+	} else if (params == null) {
+		return []
+	} else {
+		return options.verbatim ? String(params) : shellEscape(String(params))
+	}
 }
 
 /*
  * escapes embedded string/array template parameters and passes
  * through already escaped/preserved parameters verbatim
  */
-function shell (strings, ...params) {
-    let result = ''
+function shell(strings, ...params) {
+	let result = ``
 
-    for (let [ string, param ] of _.zip(strings, params)) {
-        result += string + _shellEscape(param)
-    }
+	for (const [ string, param ] of _.zip(strings, params)) {
+		result += string + _shellEscape(param)
+	}
 
-    return result
+	return result
 }
 
 /*
  * helper function which escapes its parameters and prevents them
  * from being re-escaped
  */
-shell.escape = function escape (...params) {
-    return new Escaped(_shellEscape(params, { verbatim: false }))
+shell.escape = function escape(...params) {
+	return new Escaped(_shellEscape(params, { verbatim: false }))
 }
 
 /*
  * helper function which protects its parameters from being escaped
  */
-shell.preserve = function verbatim (...params) {
-    return new Escaped(_shellEscape(params, { verbatim: true }))
+shell.preserve = function verbatim(...params) {
+	return new Escaped(_shellEscape(params, { verbatim: true }))
 }
 
 shell.protect = shell.verbatim = shell.preserve
