@@ -4,9 +4,9 @@
   "description": "An ES6 template tag which escapes parameters for interpolation into shell commands",
   "repository": "TehShrike/shell-escape-tag",
   "license": "Artistic-2.0",
-  "main": "src/shell-escape-tag.js",
+  "main": "index.js",
   "files": [
-    "src/shell-escape-tag.js"
+    "index.js"
   ],
   "scripts": {
     "test": "glob-module-file --pattern=\"test/*.js\" --format=cjs | node"
