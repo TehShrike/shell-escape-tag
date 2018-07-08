@@ -1,9 +1,8 @@
 {
-  "name": "shell-escape-tag",
-  "author": "chocolateboy",
+  "name": "@tehshrike/shell-escape-tag",
   "version": "1.2.1",
   "description": "An ES6 template tag which escapes parameters for interpolation into shell commands",
-  "repository": "chocolateboy/shell-escape-tag",
+  "repository": "TehShrike/shell-escape-tag",
   "license": "Artistic-2.0",
   "main": "src/shell-escape-tag.js",
   "files": [
@@ -18,8 +17,6 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
-    "cross-env": "^5.1.5",
-    "del": "^3.0.0",
     "glob-module-file": "2.2.1",
     "zora": "2.0.1"
   },
