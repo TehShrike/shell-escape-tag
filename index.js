@@ -1,6 +1,7 @@
 const shellEscape = require(`any-shell-escape`)
 const INSPECT = require(`inspect-custom-symbol`)
-const _ = require(`lodash`)
+const flattenDeep = require(`lodash.flattendeep`)
+const zip = require(`lodash.zip`)
 
 /*
  * wrapper class for already escaped/preserved values.
@@ -34,7 +35,7 @@ class Escaped {
  */
 function _shellEscape(params, options = {}) {
 	const escaped = [ __shellEscape(params, options) ]
-	const flattened = _.flattenDeep(escaped)
+	const flattened = flattenDeep(escaped)
 	return flattened.join(` `)
 }
 
@@ -62,7 +63,7 @@ function __shellEscape(params, options) {
 function shell(strings, ...params) {
 	let result = ``
 
-	for (const [ string, param ] of _.zip(strings, params)) {
+	for (const [ string, param ] of zip(strings, params)) {
 		result += string + _shellEscape(param)
 	}
 

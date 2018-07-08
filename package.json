@@ -14,7 +14,8 @@
   "dependencies": {
     "any-shell-escape": "^0.1.1",
     "inspect-custom-symbol": "^1.1.0",
-    "lodash": "^4.17.10"
+    "lodash.flattendeep": "4.4.0",
+    "lodash.zip": "4.2.0"
   },
   "devDependencies": {
     "glob-module-file": "2.2.1",
