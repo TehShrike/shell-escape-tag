@@ -1,6 +1,6 @@
 # @tehshrike/shell-escape-tag
 
-Like [shell-escape-tag](https://github.com/chocolateboy/shell-escape-tag) but with a small install size
+[shell-escape-tag](https://github.com/chocolateboy/shell-escape-tag), but with a much smaller install size
 
 An ES6 template tag which escapes parameters for interpolation into shell commands
 

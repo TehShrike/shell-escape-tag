@@ -1,7 +1,7 @@
 {
   "name": "@tehshrike/shell-escape-tag",
   "version": "1.2.1",
-  "description": "An ES6 template tag which escapes parameters for interpolation into shell commands",
+  "description": "shell-escape-tag, but with a much smaller install size ",
   "repository": "TehShrike/shell-escape-tag",
   "license": "Artistic-2.0",
   "main": "index.js",
