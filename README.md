@@ -12,9 +12,6 @@ An ES6 template tag which escapes parameters for interpolation into shell comman
     - [Functions](#functions)
       - [escape](#escape)
       - [preserve](#preserve)
-- [DEVELOPMENT](#development)
-  - [NPM Scripts](#npm-scripts)
-  - [Gulp Tasks](#gulp-tasks)
 - [SEE ALSO](#see-also)
 - [COPYRIGHT AND LICENSE](#copyright-and-license)
 
@@ -106,28 +103,6 @@ and wraps the resulting string in an object which is passed through
 verbatim when passed as a direct or nested parameter to
 [`shell`](#shell-default), [`shell.escape`](#escape), or
 [`shell.preserve`](#preserve).
-
-# DEVELOPMENT
-
-<details>
-
-## NPM Scripts
-
-The following NPM scripts are available:
-
-* test - lint the codebase, compile the library, and run the test suite
-
-## Gulp Tasks
-
-The following Gulp tasks are available:
-
-* build - compile the library and save it to the target directory
-* clean - remove the target directory and its contents
-* default - run the `lint` and `build` tasks
-* dump:config - print the build config settings to the console
-* lint - check and report style and usage errors in the gulpfile, source file(s) and test file(s)
-
-</details>
 
 # SEE ALSO
 
