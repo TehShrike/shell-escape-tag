@@ -1,6 +1,6 @@
 {
   "name": "@tehshrike/shell-escape-tag",
-  "version": "2.0.0",
+  "version": "1.2.2",
   "description": "shell-escape-tag, but with a much smaller install size ",
   "repository": "TehShrike/shell-escape-tag",
   "license": "Artistic-2.0",
