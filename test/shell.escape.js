@@ -1,10 +1,9 @@
 const shell = require(`../`)
 const test = require(`zora`)
-const inspect = require(`util`).inspect
 
 test(`stringifies to the escaped string`, t => {
 	t.equal(shell.escape(`Foo Bar`).toString(), `'Foo Bar'`)
-	t.equal(inspect(shell.escape(`Foo Bar`)), `'Foo Bar'`)
+	// t.equal(inspect(shell.escape(`Foo Bar`)), `'Foo Bar'`)
 })
 
 test(`escapes a string with spaces`, t => {
@@ -50,7 +49,7 @@ test(`ignores null and undefined array values`, t => {
 })
 
 test(`stringifies defined values`, t => {
-	t.equal(shell.escape(``).value, ``)
+	t.equal(shell.escape(``).value, `''`)
 	t.equal(shell.escape(false).value, `false`)
 	t.equal(shell.escape(42).value, `42`)
 })
@@ -64,7 +63,7 @@ test(`stringifies defined array values`, t => {
 			false,
 			`Baz Quux`,
 		]).value,
-		`'Foo Bar' 0  false 'Baz Quux'`
+		`'Foo Bar' 0 '' false 'Baz Quux'`
 	)
 })
 
@@ -79,7 +78,7 @@ test(`flattens nested array values`, t => {
 				],
 			],
 		]).value,
-		`'Foo Bar' 0  false 'Baz Quux'`
+		`'Foo Bar' 0 '' false 'Baz Quux'`
 	)
 })
 

@@ -20,7 +20,7 @@ test(`ignores null and undefined values`, t => {
 
 test(`does not ignore empty strings`, t => {
 	const bar = [ ``, `bar`, `` ]
-	t.equal(shell`foo${ bar }baz`, `foo bar baz`)
+	t.equal(shell`foo${ bar }baz`, `foo'' bar ''baz`)
 })
 
 test(`escapes a string with no interpolations`, t => {

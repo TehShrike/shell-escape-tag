@@ -1,6 +1,6 @@
 {
   "name": "@tehshrike/shell-escape-tag",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "shell-escape-tag, but with a much smaller install size ",
   "repository": "TehShrike/shell-escape-tag",
   "license": "Artistic-2.0",
@@ -12,14 +12,13 @@
     "test": "glob-module-file --pattern=\"test/*.js\" --format=cjs | node | faucet"
   },
   "dependencies": {
-    "any-shell-escape": "^0.1.1",
-    "inspect-custom-symbol": "^1.1.0",
+    "@tehshrike/any-shell-escape": "~1.0.0",
     "lodash.flattendeep": "4.4.0",
     "lodash.zip": "4.2.0"
   },
   "devDependencies": {
-    "faucet": "0.0.1",
-    "glob-module-file": "2.2.1",
+    "faucet": "^0.0.4",
+    "glob-module-file": "3.2.0",
     "zora": "2.0.1"
   },
   "keywords": [

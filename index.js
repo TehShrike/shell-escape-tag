@@ -1,7 +1,6 @@
-const shellEscape = require(`any-shell-escape`)
-const INSPECT = require(`inspect-custom-symbol`)
-const flattenDeep = require(`lodash.flattendeep`)
-const zip = require(`lodash.zip`)
+const shellEscape = require('@tehshrike/any-shell-escape')
+const flattenDeep = require('lodash.flattendeep')
+const zip = require('lodash.zip')
 
 /*
  * wrapper class for already escaped/preserved values.
@@ -14,11 +13,6 @@ class Escaped {
 	}
 
 	toString() {
-		return this.value
-	}
-
-	// for console.log etc.
-	[INSPECT]() {
 		return this.value
 	}
 }
